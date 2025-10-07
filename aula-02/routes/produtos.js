@@ -1,32 +1,34 @@
-function listarProdutos() {
-    const produtos = [
-        {
-            id : 1,
-            nome: 'Mouse USB',
-            valor: 15.99
-        },
-        {
-            id : 2,
-            nome: 'Teclado USB',
-            valor: 25.99
-        }
-        ]
-    return produtos;
+class Produtos{
+static produtos = [{
+        id : 1,
+        nome: 'Mouse USB',
+        valor: 15.99
+    },
+    {
+        id : 2,
+        nome: 'Teclado USB',
+        valor: 25.99
+    }
+]
+    static listar() {
+        
+        return Produtos.produtos;
 }
 
-function addProdutos() {
-    
-}
+    static add(id,nome,valor) {
+        Produtos.produtos.push({
+            id: id,
+            nome: nome,
+            valor: valor
+        })
+    }
 
-function removeProdutos() {
-    
-}
+    static remove(indice) {
+        Produtos.produtos.splice(indice,1);
+    }
 
-function editarProdutos(params) {
-    
+    static editar(params) {
+        
+    }
 }
-
-module.exports = listarProdutos;
-module.exports = editarProdutos;
-module.exports = addProdutos;
-module.exports = removeProdutos;
+module.exports = Produtos;

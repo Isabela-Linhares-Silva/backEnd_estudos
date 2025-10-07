@@ -1,9 +1,8 @@
 const { log } = require('node:console');
 const { createServer } = require('node:http')
-const listarProdutos = require('./routes/produtos');
+const Produtos = require('./routes/produtos');
 const host = 'localhost';
 const port= 3000;
-
 
 
 
@@ -25,24 +24,22 @@ const app = createServer((request,response)=>{
 
     if (url == '/produtos') {
         
-        const dados = listarProdutos();
+        const dados = Produtos.listar();
 
         response.writeHead(200, {'Content-type':'application/json'});
         return response.end(JSON.stringify(dados));//transforma em string
     }
 
      if (url == '/produtos/adicionar') {
-        produtos.push({
-            id: 3,
-            nome: 'Monitor 34p',
-            valor: 3340.98
-        })
+        
+        Produtos.add(4,'Monitor',5000);
         response.writeHead(200, {'Content-type':'text/plain'});
         return response.end("Produto adicionado com sucesso");
     }
 
     if (url == '/produtos/remover') {
-        produtos.pop();
+        
+        Produtos.remove(1);
         response.writeHead(200, {'Content-type':'text/plain'});
         return response.end("Produto removido com sucesso");
     }
