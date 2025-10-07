@@ -1,21 +1,10 @@
 const { log } = require('node:console');
 const { createServer } = require('node:http')
-
+const listarProdutos = require('./routes/produtos');
 const host = 'localhost';
 const port= 3000;
 
-const produtos = [
-        {
-            id : 1,
-            nome: 'Mouse USB',
-            valor: 15.99
-        },
-        {
-            id : 2,
-            nome: 'Teclado USB',
-            valor: 25.99
-        }
-        ]
+
 
 
 const app = createServer((request,response)=>{
@@ -36,8 +25,10 @@ const app = createServer((request,response)=>{
 
     if (url == '/produtos') {
         
+        const dados = listarProdutos();
+
         response.writeHead(200, {'Content-type':'application/json'});
-        return response.end(JSON.stringify(produtos));//transforma em string
+        return response.end(JSON.stringify(dados));//transforma em string
     }
 
      if (url == '/produtos/adicionar') {
