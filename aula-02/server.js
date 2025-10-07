@@ -1,6 +1,6 @@
-const { log } = require('node:console');
+
 const { createServer } = require('node:http')
-const Produtos = require('./routes/produtos');
+
 const rotas = require('./routes/router');
 
 const host = 'localhost';
@@ -12,7 +12,6 @@ const app = createServer((request,response)=>{
     // const url = request.url;
     // const method = request.method;    
     //fazer a linha de baixo ao inves das duas linhas;
-    
     
     const { url , method} = request;
  

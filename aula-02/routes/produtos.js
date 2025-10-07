@@ -10,9 +10,8 @@ static produtos = [{
         valor: 25.99
     }
 ]
-    static listar() {
-        
-        return Produtos.produtos;
+    static listar() { 
+    return Produtos.produtos;
 }
 
     static add(id,nome,valor) {
