@@ -9,7 +9,7 @@ static produtos = [{
         nome: 'Teclado USB',
         valor: 25.99
     }
-]
+];
     static listar() { 
     return Produtos.produtos;
 }

@@ -25,7 +25,7 @@ const app = createServer((request,response)=>{
 
 
 if (rotas[url] && rotas[url][method]) {
-    const dados = rotas[url][method];// entra no reouter e encontra o metodo GET e assis percebe que ele é o listar
+    const dados = rotas[url][method];// entra no router e encontra o metodo GET e assis percebe que ele é o listar
     response.writeHead(200, {'Content-type':'application/json'});
     return response.end(JSON.stringify(dados));//transforma em string
 }

@@ -3,6 +3,11 @@ static lista = [{
     id: 1,
     nome:'Lua',
     login:'Lua123'
+},
+{
+    id: 2,
+    nome:'Clara',
+    login:'Clara23'
 }
 ]
     static listar() {
